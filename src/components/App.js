@@ -25,7 +25,6 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
 
-
     this.state = {
       platform: Platform.OS,
       welcomeMsg: 'Good evening HETIC!',
