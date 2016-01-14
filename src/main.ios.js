@@ -8,7 +8,6 @@ import App from './components/App';
 class Root extends App {
   static defaultProps = {
     ...App.defaultProps,
-    instructions: 'Please press Cmd+R to reload,\nCmd+D or shake for dev menu',
   };
 }
 
