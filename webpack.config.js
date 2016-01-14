@@ -19,6 +19,11 @@
       path: path.resolve(__dirname, 'build'),
       filename: '[name].js',
     },
+    resolve: {
+      alias: {
+        'gistAPI': __dirname + '/src/lib/gistAPI.js',
+      }
+    },
     module: {
       preLoaders: [
         {
