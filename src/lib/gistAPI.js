@@ -1,5 +1,3 @@
-//https://api.github.com/users/hugocaillard/gists
-
 const c = {
   url: 'https://api.github.com/',
 };
