@@ -30,7 +30,6 @@ class User extends Component {
 
   static defaultProps = {
     ...Component.defaultProps,
-    navigationBarHidden: false,
   };
 
   constructor(props, context) {
