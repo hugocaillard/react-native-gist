@@ -19,6 +19,7 @@
     "npm": ">=2 <4"
   },
   "dependencies": {
+    "moment": "^2.11.1",
     "react-native": "^0.17.0"
   },
   "devDependencies": {
