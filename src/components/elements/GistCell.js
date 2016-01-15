@@ -1,11 +1,11 @@
 import React from 'react-native';
+import * as moment from 'moment';
 
 const {
   StyleSheet,
   View,
   Text,
 } = React;
-
 
 export default function GistCell(rowData) {
   let { files } = rowData;
@@ -14,6 +14,9 @@ export default function GistCell(rowData) {
     <View>
       <View style={styles.separator} />
       <View style={styles.row}>
+        <Text style={styles.text}>
+          {moment.default(rowData.created_at).format('MMM Do YYYY')}
+        </Text>
         <Text style={styles.description}>
           {rowData.description || 'No description'}
         </Text>
@@ -24,8 +27,7 @@ export default function GistCell(rowData) {
           {Object.keys(files).map(function(key, i){
             return (
               <Text key={i}>
-                {files[key].filename} -
-                {files[key].language}{'\n'}
+                {files[key].filename} - {files[key].language}{'\n'}
               </Text>
             );
           })}

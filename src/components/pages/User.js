@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react-native';
 
+// PAGES
+import Gist from './Gist.js';
+
 // ELEMENTS
 import GistCell from '../elements/GistCell.js';
 
@@ -21,6 +24,7 @@ class User extends Component {
 
   static propTypes = {
     navigationBarHidden: PropTypes.bool,
+    navigator: PropTypes.object,
     user: PropTypes.string,
   };
 
@@ -32,6 +36,7 @@ class User extends Component {
   constructor(props, context) {
     super(props, context);
 
+    this.viewGist = this.viewGist.bind(this);
     this.renderGistCell = this.renderGistCell.bind(this);
 
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -69,14 +74,24 @@ class User extends Component {
       .catch((error) => {
         throw new Error(error);
       });
+  }
 
+  viewGist(gist) {
+    this.props.navigator.push({
+      title: 'Gist details',
+      component: Gist,
+      passProps: {
+        username: this.state.user.name,
+        gist,
+      },
+    });
   }
 
   renderGistCell(rowData) {
     return(
       <TouchableHighlight
-        underlayColor={'transparent'}
-        onPress={() => {}}
+        underlayColor={'#007aff'}
+        onPress={() => this.viewGist(rowData)}
       >
         {GistCell(rowData)}
       </TouchableHighlight>
