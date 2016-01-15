@@ -28,7 +28,6 @@ class Home extends Component {
 
   static defaultProps = {
     ...Component.defaultProps,
-    navigationBarHidden: false,
   };
 
   constructor(props, context) {
@@ -41,7 +40,7 @@ class Home extends Component {
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
-      searchText: '',
+      searchText: 'vjeux',
       users: ds.cloneWithRows([]),
       lastSearch: 0,
       ds,
