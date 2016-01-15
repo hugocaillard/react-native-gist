@@ -21,7 +21,6 @@ class Gist extends Component {
 
   static defaultProps = {
     ...Component.defaultProps,
-    navigationBarHidden: false,
   };
 
   constructor(props, context) {
@@ -54,11 +53,11 @@ class Gist extends Component {
               style={styles.picture}
               source={{uri: owner.avatar_url}}
             />
-            <Text style={styles.username}>
+            <Text style={[styles.username, styles.bold]}>
               {this.props.username}
             </Text>
           </View>
-          <Text style={styles.description}>
+          <Text style={[styles.description, styles.bold]}>
             {gist.description}
           </Text>
           <Text style={styles.text}>
@@ -82,7 +81,7 @@ class Gist extends Component {
           <View style={styles.btnContainer}>
             <Text
               onPress={this.toggleModal}
-              style={styles.btn}
+              style={[styles.btn, styles.bold]}
             >
               View on the Web
             </Text>
@@ -94,7 +93,7 @@ class Gist extends Component {
           visible={modal.visible}
         >
           <View style={styles.modal}>
-            <Text onPress={this.toggleModal} style={styles.closeBtn}>
+            <Text onPress={this.toggleModal} style={[styles.closeBtn, styles.bold]}>
               Close
             </Text>
             <WebView
@@ -128,7 +127,6 @@ let styles = StyleSheet.create({
     fontSize: 18,
     marginTop: 20,
     marginBottom: 10,
-    fontWeight: 'bold',
   },
   picture: {
     width: 64,
@@ -137,7 +135,6 @@ let styles = StyleSheet.create({
   },
   username: {
     fontSize: 24,
-    fontWeight: 'bold',
   },
   bold: {
     fontWeight: 'bold',
@@ -154,7 +151,6 @@ let styles = StyleSheet.create({
     padding: 20,
     paddingTop: 12,
     paddingBottom: 10,
-    fontWeight: 'bold',
   },
   modal: {
     paddingTop: 20,

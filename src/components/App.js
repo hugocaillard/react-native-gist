@@ -27,7 +27,7 @@ class App extends Component {
         initialRoute={{
           component: Home,
           title: 'Home',
-          passProps: { myProp: 'foo' },
+          passProps: {},
         }}
       />
     );
