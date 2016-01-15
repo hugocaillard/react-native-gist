@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react-native';
 // PAGES
 
 // ELEMENTS
-import UserCell from '../elements/UserCell.js';
 
 // LIBS
 import { getUsers } from 'gistAPI';
@@ -15,7 +14,6 @@ const {
   View,
   ScrollView,
   ListView,
-  TouchableHighlight,
 } = React;
 
 class Home extends Component {
@@ -33,7 +31,6 @@ class Home extends Component {
     super(props, context);
 
     this.search = this.search.bind(this);
-    this.renderUserCell = this.renderUserCell.bind(this);
 
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
@@ -47,18 +44,6 @@ class Home extends Component {
 
   componentDidMount() {
     this.search('vjeux');
-  }
-
-  renderUserCell(rowData) {
-    return(
-      <TouchableHighlight
-        underlayColor={'#007aff'}
-        onPress={() => {}}
-        userId={rowData.id}
-      >
-        {UserCell(rowData)}
-      </TouchableHighlight>
-    );
   }
 
   search(searchStr) {
@@ -84,7 +69,7 @@ class Home extends Component {
   }
 
   render() {
-    let { searchText, users } = this.state;
+    let { searchText } = this.state;
 
     return (
       <ScrollView style={styles.container}>
@@ -96,10 +81,6 @@ class Home extends Component {
             onChangeText={this.search}
           />
         </View>
-        <ListView
-          dataSource={users}
-          renderRow={this.renderUserCell}
-        />
       </ScrollView>
     );
   }
