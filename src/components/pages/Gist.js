@@ -4,9 +4,7 @@ import * as moment from 'moment';
 const {
   StyleSheet,
   View,
-  WebView,
   ScrollView,
-  Modal,
   Image,
   Text,
 } = React;
@@ -26,22 +24,11 @@ class Gist extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.toggleModal = this.toggleModal.bind(this);
-
     this.state = {
-      animated: true,
-      transparent: false,
-      visible: false,
     };
   }
 
-  toggleModal() {
-    this.setState({visible: !this.state.visible});
-  }
-
   render() {
-    const modal = this.state;
-
     const gist = this.props.gist;
     const owner = gist.owner;
 
@@ -78,31 +65,7 @@ class Gist extends Component {
               );
             })}
           </Text>
-          <View style={styles.btnContainer}>
-            <Text
-              onPress={this.toggleModal}
-              style={[styles.btn, styles.bold]}
-            >
-              View on the Web
-            </Text>
-          </View>
         </View>
-        <Modal
-          animated={modal.animated}
-          transparent={modal.transparent}
-          visible={modal.visible}
-        >
-          <View style={styles.modal}>
-            <Text onPress={this.toggleModal} style={[styles.closeBtn, styles.bold]}>
-              Close
-            </Text>
-            <WebView
-              automaticallyAdjustContentInsets={false}
-              url={gist.html_url}
-              style={styles.webView}
-            />
-          </View>
-        </Modal>
       </ScrollView>
     );
   }
@@ -138,36 +101,6 @@ let styles = StyleSheet.create({
   },
   bold: {
     fontWeight: 'bold',
-  },
-  btnContainer: {
-    marginTop: 20,
-    alignItems: 'center',
-  },
-  btn: {
-    borderColor: '#007aff',
-    color: '#007aff',
-    borderWidth: 2,
-    borderRadius: 4,
-    padding: 20,
-    paddingTop: 12,
-    paddingBottom: 10,
-  },
-  modal: {
-    paddingTop: 20,
-    borderColor: '#cccccc',
-    borderTopWidth: 1,
-    flex: 1,
-  },
-  closeBtn: {
-    padding: 6,
-    paddingTop: 4,
-    paddingBottom: 10,
-    color: '#007aff',
-    fontSize: 16,
-  },
-  webView: {
-    backgroundColor: '#f5f5f5',
-    flex: 1,
   },
 });
 
