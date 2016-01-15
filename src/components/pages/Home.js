@@ -49,7 +49,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.search('hugocaillard');
+    this.search('vjeux');
   }
 
   renderUserCell(rowData) {
