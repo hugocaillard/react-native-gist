@@ -8,11 +8,11 @@ Made for an educational purpose (for some students of HETIC).
 ## Steps (branches)
 
 - 0: *master* - Starter
-- 1: *step-1* - Create the **navigator** (router) and the **Home** view with the users search and display the results, with an other component for the **User cell**. (This implies the API calls) (**components/pages/Home.js** & **components/elements/User.js**)
-- 2: *step-2* - Create the **User view** with some details and a list of Gists, with an other component for the **Gist cell**. Link the Home et Users views (**components/pages/User.js** & **components/elements/GistCell.js**)
-- 3: *step-3* - Add **Gist details view** and link it from the User view (**components/pages/Gist.js**)
-- 4: *step-4* - Add a **modal** with a **WebView** to see the gist (**components/pages/Gist.js**)
-- 5: *end* - The end.
+- 1: *step-1* - Create the **navigator** (router) and the **Home** View with the users search (This implies the API calls) (**components/pages/Home.js** & **components/lib/gistAPI.js**)
+- 2: *step-2* - Display the search results in a **ListView**, with an other component for the **User cell**. (**components/pages/Home.js** & **components/elements/User.js**)
+- 3: *step-3* - Create the **User** View with some details and a list of Gists in a **ListView**, with an other component for the **Gist cell**. Link the Home et Users views (**components/pages/User.js** & **components/elements/GistCell.js**)
+- 4: *step-4* - Add **Gist details view** and link it from the User view (**components/pages/Gist.js**)
+- 5: *end* - Add a **modal** with a **WebView** to see the gist (**components/pages/Gist.js**) - The end.
 
 ## Structure of the React Native application
 
