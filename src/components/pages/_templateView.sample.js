@@ -13,9 +13,6 @@ const {
   StyleSheet,
   View,
   ScrollView,
-  ListView,
-  TouchableHighlight,
-  Image,
   Text,
 } = React;
 
