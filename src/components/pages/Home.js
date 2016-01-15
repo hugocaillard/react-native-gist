@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react-native';
 
 // PAGES
-import User from './User';
 
 // ELEMENTS
 import UserCell from '../elements/UserCell.js';
@@ -35,7 +34,6 @@ class Home extends Component {
 
     this.search = this.search.bind(this);
     this.renderUserCell = this.renderUserCell.bind(this);
-    this.viewUser = this.viewUser.bind(this);
 
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
@@ -55,22 +53,12 @@ class Home extends Component {
     return(
       <TouchableHighlight
         underlayColor={'#007aff'}
-        onPress={() => this.viewUser(rowData)}
+        onPress={() => {}}
         userId={rowData.id}
       >
         {UserCell(rowData)}
       </TouchableHighlight>
     );
-  }
-
-  viewUser(user) {
-    this.props.navigator.push({
-      title: user.login,
-      component: User,
-      passProps: {
-        user: user.login,
-      },
-    });
   }
 
   search(searchStr) {
