@@ -5,6 +5,30 @@ Made for an educational purpose (for some students of HETIC).
 
 #### Based on [react-native-webpack-starter-kit](https://github.com/jhabdas/react-native-webpack-starter-kit)
 
+## Steps (branches)
+
+- 0: *master* - Starter
+- 1: *step-1* - Create the **navigator** (router) and the **Home** view with the users search and display the results, with an other component for the **User cell**. (This implies the API calls) (**components/pages/Home.js** & **components/elements/User.js**)
+- 2: *step-2* - Create the **User view** with some details and a list of Gists, with an other component for the **Gist cell**. Link the Home et Users views (**components/pages/User.js** & **components/elements/GistCell.js**)
+- 3: *step-3* - Add **Gist details view** and link it from the User view (**components/pages/Gist.js**)
+- 4: *step-4* - Add a **modal** with a **WebView** to see the gist (**components/pages/Gist.js**)
+- 5: *end* - The end.
+
+## Structure of the React Native application
+
+```
+  src/
+    components/
+      elements/
+        GistCell.js
+        UserCell.js
+      pages/
+        Gist.js
+        Home.js
+        User.js
+      App.js
+```
+
 ## Requirements
 
 - [Node](https://nodejs.org) 4.x or better
