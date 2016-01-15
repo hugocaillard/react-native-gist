@@ -1,3 +1,5 @@
+src/lib/configGitHub.js
+
 # OSX
 #
 .DS_Store
@@ -21,12 +23,14 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+ios/main.jsbundle
 
 # Android/IJ
 #
 .idea
 .gradle
 local.properties
+android/app/src/main/assets/index.android.bundle
 
 # node.js
 #
